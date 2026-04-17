@@ -9,14 +9,27 @@ body {
 
 /* 🔹 Título principal */
 h1 {
+     font-family: 'Playfair Display', serif;
     text-align: center;
     color: #6a0dad;
     transition: transform 0.3s;
     margin-top: 20px;
 }
 
- h1:hover {
-    transform: scale(1.1);
+h1:hover {
+    transform: scale(1.05);
+}
+
+.header {
+    display: flex;
+    align-items: center; /* 👈 los alinea verticalmente */
+    justify-content: center; /* 👈 centra todo */
+    gap: 10px; /* espacio entre logo y texto */
+}
+
+.logo {
+    width: 50px; /* 👈 tamaño fijo */
+    height: auto;
 }
 
 /* 🔹 Menú */
@@ -31,22 +44,44 @@ nav a {
     margin: 10px;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: yellow;
 }
 
 /* 🔹 Contenedor principal */
 .container {
-    text-align: center;
     margin-top: 40px;
+    animation: aparecer 1s ease-in-out;
+    text-align: center; 
 }
 
-/* 🔹 Productos */
+/* 🔹 Productos (AHORA BIEN HECHO) */
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px; 
+    margin: auto; 
+}
+
 .producto {
-    display: inline-block;
     background-color: white;
-    padding: 15px;
-    margin: 15px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px gray;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 0 0 25%;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px purple;
 }
 
 /* 🔹 Imágenes */
@@ -61,6 +96,12 @@ button {
     border: none;
     padding: 10px;
     border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #4b0082;
+    transform: scale(1.1);
 }
 
 /* 🔹 Formulario */
@@ -69,19 +110,14 @@ form {
     margin-top: 30px;
 }
 
-input {
+input, textarea {
     display: block;
     margin: 10px auto;
     padding: 8px;
-    width: 200px; }
-
-    /* 🔥 Animación de entrada */
-.container {
-    text-align: center;
-    margin-top: 40px;
-    animation: aparecer 1s ease-in-out;
+    width: 200px;
 }
 
+/* 🔥 Animación */
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -91,48 +127,4 @@ input {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* 🔥 Efecto en productos */
-.producto {
-    display: inline-block;
-    background-color: white;
-    padding: 15px;
-    margin: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 20px purple;
-}
-
-/* 🔥 Efecto en botones */
-button {
-    background-color: #6a0dad;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-button:hover {
-    background-color: #4b0082;
-    transform: scale(1.1);
-}
-
-/* 🔥 Menú con efecto */
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: yellow;
 }
