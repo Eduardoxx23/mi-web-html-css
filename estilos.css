@@ -1,0 +1,130 @@
+/* 🔹 Fondo general */
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* 🔹 Título principal */
+h1 {
+     font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #6a0dad;
+    transition: transform 0.3s;
+    margin-top: 20px;
+}
+
+h1:hover {
+    transform: scale(1.05);
+}
+
+.header {
+    display: flex;
+    align-items: center; /* 👈 los alinea verticalmente */
+    justify-content: center; /* 👈 centra todo */
+    gap: 10px; /* espacio entre logo y texto */
+}
+
+.logo {
+    width: 50px; /* 👈 tamaño fijo */
+    height: auto;
+}
+
+/* 🔹 Menú */
+nav {
+    text-align: center;
+    background-color: #6a0dad;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* 🔹 Contenedor principal */
+.container {
+    margin-top: 40px;
+    animation: aparecer 1s ease-in-out;
+    text-align: center; 
+}
+
+/* 🔹 Productos (AHORA BIEN HECHO) */
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px; 
+    margin: auto; 
+}
+
+.producto {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 0 0 25%;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px purple;
+}
+
+/* 🔹 Imágenes */
+img {
+    border-radius: 10px;
+}
+
+/* 🔹 Botones */
+button {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #4b0082;
+    transform: scale(1.1);
+}
+
+/* 🔹 Formulario */
+form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+input, textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 200px;
+}
+
+/* 🔥 Animación */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
